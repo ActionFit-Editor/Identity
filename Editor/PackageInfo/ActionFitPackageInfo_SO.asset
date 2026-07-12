@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b5ab7e2b67b436db878fd7b023d8616, type: 3}
+  m_Name: ActionFitPackageInfo_SO
+  m_EditorClassIdentifier:
+  _packageId: com.actionfit.identity
+  _displayName: ActionFit Identity
+  _repoName: Identity
+  _repositoryVisibility: 0
+  _owner: "\uC1A1\uC81C\uC6B0"
+  _status: verified
+  _description: "\uD504\uB85C\uC81D\uD2B8 SDK\uC640 \uBD84\uB9AC\uB41C \uC124\uCE58
+    ID \uC0DD\uC131, \uC601\uC18D \uC800\uC7A5, \uC21C\uC11C\uD615 \uB808\uAC70\uC2DC
+    \uB9C8\uC774\uADF8\uB808\uC774\uC158 \uACC4\uC57D\uC744 \uC81C\uACF5\uD558\uB294
+    \uBC94\uC6A9 \uB7F0\uD0C0\uC784 \uD328\uD0A4\uC9C0\uC785\uB2C8\uB2E4."
+  _releaseNote: "- `InstallationIdentityService`\uB97C \uD1B5\uD574 \uD504\uB85C\uC81D\uD2B8\uC640
+    SDK\uC5D0 \uB3C5\uB9BD\uC801\uC778 \uC548\uC815 \uC124\uCE58 ID \uC0DD\uC131\xB7\uC870\uD68C
+    \uD750\uB984\uC744 \uC81C\uACF5\uD569\uB2C8\uB2E4.\n- `IInstallationIdStore`\uB85C
+    PlayerPrefs, \uC554\uD638\uD654 \uC800\uC7A5\uC18C, \uB370\uC774\uD130\uBCA0\uC774\uC2A4
+    \uB4F1 \uD504\uB85C\uC81D\uD2B8\uBCC4 \uC601\uC18D \uC800\uC7A5 \uBC29\uC2DD\uC744
+    \uC5F0\uACB0\uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4.\n- \uC5EC\uB7EC `IInstallationIdMigrationSource`\uB97C
+    \uC21C\uC11C\uB300\uB85C \uAC80\uC0AC\uD574 \uAE30\uC874 \uC2DD\uBCC4\uC790\uB97C
+    \uC6B0\uC120 \uBCF4\uC874\uD558\uACE0 \uCD5C\uCD08 \uC800\uC7A5\uC18C\uB85C \uC774\uAD00\uD569\uB2C8\uB2E4.\n-
+    `InstallationIdResolutionKind`\uC640 \uB9C8\uC774\uADF8\uB808\uC774\uC158 \uC18C\uC2A4
+    \uC774\uB984\uB9CC \uC81C\uACF5\uD574 \uC6D0\uBCF8 \uC2DD\uBCC4\uC790\uB97C \uB85C\uADF8\uC5D0
+    \uB0A8\uAE30\uC9C0 \uC54A\uACE0\uB3C4 \uC0DD\uC131 \uACBD\uB85C\uB97C \uC9C4\uB2E8\uD560
+    \uC218 \uC788\uC2B5\uB2C8\uB2E4.\n- \uC800\uC7A5\uAC12 \uC6B0\uC120, \uB9C8\uC774\uADF8\uB808\uC774\uC158
+    \uC6B0\uC120\uC21C\uC704, \uC2E0\uADDC \uC0DD\uC131, \uBA85\uC2DC\uC801 \uAD50\uCCB4\uC640
+    \uC798\uBABB\uB41C \uC785\uB825\uC744 \uAC80\uC99D\uD558\uB294 Runtime \uD14C\uC2A4\uD2B8\uB97C
+    \uCD94\uAC00\uD588\uC2B5\uB2C8\uB2E4."
+  _dependenciesOverride:
