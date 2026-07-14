@@ -42,8 +42,17 @@ string installationId = service.GetOrCreateId();
 현재 프로젝트에서는 embedded package로 사용할 수 있습니다. 수동 게시 후 다른 프로젝트의 `Packages/manifest.json`에는 다음 Git UPM 주소를 사용합니다.
 
 ```json
-"com.actionfit.identity": "https://github.com/ActionFit-Editor/Identity.git#1.0.1"
+"com.actionfit.identity": "https://github.com/ActionFitGames/Identity.git#1.0.3"
 ```
+
+## Agent Skills
+
+Custom Package Manager의 `Install or Refresh Agent Skills`를 실행하면 Codex와 Claude에 다음 read-only 진입점이 설치됩니다.
+
+- `identity-help`: canonical storage, 순서형 migration, 명시적 replacement와 개인정보 보호 경계를 설명합니다.
+- `identity-audit`: 실제 저장 ID를 읽지 않고 migration 우선순위, 읽기 실패 전파, replacement guard와 비식별 진단 계약을 소스 기준으로 점검합니다.
+
+스킬은 식별자를 조회·생성·교체·이관하거나 로그에 원본 값을 출력하지 않습니다.
 
 ## Unity Menu
 

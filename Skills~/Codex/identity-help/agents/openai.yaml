@@ -1,0 +1,4 @@
+interface:
+  display_name: "Identity Help"
+  short_description: "Explain installation identity package contracts"
+  default_prompt: "Use $identity-help to explain ActionFit Identity skills, migration ordering, diagnostics, and safety boundaries."

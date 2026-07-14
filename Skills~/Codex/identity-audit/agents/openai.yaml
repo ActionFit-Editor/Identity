@@ -1,0 +1,4 @@
+interface:
+  display_name: "Audit Identity"
+  short_description: "Audit identity migration and privacy safety"
+  default_prompt: "Use $identity-audit to audit installation identity storage, migration priority, replacement, and privacy-safe diagnostics."

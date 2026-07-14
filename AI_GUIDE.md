@@ -6,8 +6,8 @@ This file is shipped inside the UPM package so an AI assistant in a consuming Un
 
 - Package ID: `com.actionfit.identity`
 - Display name: ActionFit Identity
-- Repository: `https://github.com/ActionFit-Editor/Identity.git`
-- Current package version at generation time: `1.0.1`
+- Repository: `https://github.com/ActionFitGames/Identity.git`
+- Current package version at generation time: `1.0.3`
 - Unity version: `6000.2`
 
 ## Purpose
@@ -15,6 +15,12 @@ This file is shipped inside the UPM package so an AI assistant in a consuming Un
 ActionFit Identity provides a reusable installation ID resolver with pluggable durable storage, ordered legacy migration sources, explicit recovery replacement, and diagnostics that do not require logging the raw identifier.
 
 It owns installation identity resolution only. It does not own authenticated account login, account merge UI, cloud save, analytics SDK setup, Firebase access, or project-specific legacy key definitions.
+
+## Agent Skills
+
+- `Skills~/manifest.json` registers schema v2 `identity-help` and `identity-audit` for Codex and Claude with read-only access.
+- Help reads the generated `PACKAGE_SKILLS.md` inventory before explaining canonical storage, ordered migration, replacement, tests, and privacy boundaries.
+- Audit inspects source and adapter definitions only. It must not read stored identifier values, resolve or replace an ID, access persistence, edit files, or expose raw installation, account, advertising, or recovery identifiers.
 
 ## Project Router Registration
 

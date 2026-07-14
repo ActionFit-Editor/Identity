@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 2,
+  "skillPrefix": "identity",
+  "helpSkill": "identity-help",
+  "skills": [
+    {
+      "name": "identity-help",
+      "agents": [
+        "codex",
+        "claude"
+      ],
+      "includeShared": false,
+      "access": "read-only"
+    },
+    {
+      "name": "identity-audit",
+      "agents": [
+        "codex",
+        "claude"
+      ],
+      "includeShared": false,
+      "access": "read-only"
+    }
+  ]
+}
