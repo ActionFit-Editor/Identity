@@ -1,6 +1,6 @@
 {
     "name": "com.actionfit.identity",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "displayName": "ActionFit Identity",
     "description": "Reusable installation identity resolution with pluggable persistence, ordered legacy migration sources, and privacy-safe diagnostics.",
     "unity": "6000.2",

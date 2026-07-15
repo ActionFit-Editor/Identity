@@ -7,7 +7,7 @@ This file is shipped inside the UPM package so an AI assistant in a consuming Un
 - Package ID: `com.actionfit.identity`
 - Display name: ActionFit Identity
 - Repository: `https://github.com/ActionFitGames/Identity.git`
-- Current package version at generation time: `1.0.3`
+- Current package version at generation time: `1.0.4`
 - Unity version: `6000.2`
 
 ## Purpose
@@ -46,6 +46,7 @@ Read this file when:
 - `IInstallationIdMigrationSource` exposes one read-only legacy candidate and a non-sensitive source name.
 - `IInstallationIdGenerator` creates an ID only after canonical storage and every migration source return no usable value.
 - `InstallationIdentityService.Resolve()` preserves canonical storage first, evaluates migration sources in registration order, persists the first usable candidate, and generates a GUID only as the final fallback.
+- `Resolve()` re-reads the canonical store on every call instead of caching a resolved value, so an explicit recovery replacement is visible to later consumers.
 - `InstallationIdentityService.ReplaceId()` is reserved for an explicit recovery or conflict-resolution decision. It rejects null, empty, and whitespace-only values.
 - `InstallationIdResolutionKind` and `MigrationSource` are safe diagnostic metadata. Do not log `InstallationIdResolution.InstallationId`.
 

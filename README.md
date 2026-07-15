@@ -33,7 +33,7 @@ var service = new InstallationIdentityService(
 string installationId = service.GetOrCreateId();
 ```
 
-`InstallationIdentityService`는 유효한 저장 ID를 절대 자동 교체하지 않습니다. 저장 ID가 없을 때만 등록 순서대로 마이그레이션 소스를 확인하며, 후보도 없을 때 GUID를 생성합니다.
+`InstallationIdentityService`는 유효한 저장 ID를 절대 자동 교체하지 않습니다. 저장 ID가 없을 때만 등록 순서대로 마이그레이션 소스를 확인하며, 후보도 없을 때 GUID를 생성합니다. `Resolve()`는 결과를 캐시하지 않고 호출마다 canonical store를 다시 읽으므로, 명시적 replacement가 이후 호출에 즉시 반영됩니다.
 
 `ReplaceId`는 계정 복구나 충돌 해결처럼 사용자가 명시적으로 ID 교체를 선택한 흐름에서만 사용해야 합니다.
 
@@ -42,7 +42,7 @@ string installationId = service.GetOrCreateId();
 현재 프로젝트에서는 embedded package로 사용할 수 있습니다. 수동 게시 후 다른 프로젝트의 `Packages/manifest.json`에는 다음 Git UPM 주소를 사용합니다.
 
 ```json
-"com.actionfit.identity": "https://github.com/ActionFitGames/Identity.git#1.0.3"
+"com.actionfit.identity": "https://github.com/ActionFitGames/Identity.git#1.0.4"
 ```
 
 ## Agent Skills
