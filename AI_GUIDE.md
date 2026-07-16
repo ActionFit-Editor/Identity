@@ -6,8 +6,8 @@ This file is shipped inside the UPM package so an AI assistant in a consuming Un
 
 - Package ID: `com.actionfit.identity`
 - Display name: ActionFit Identity
-- Repository: `https://github.com/ActionFitGames/Identity.git`
-- Current package version at generation time: `1.0.4`
+- Repository: `https://github.com/ActionFit-Editor/Identity.git`
+- Current package version at generation time: `1.0.5`
 - Unity version: `6000.2`
 
 ## Purpose

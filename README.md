@@ -42,7 +42,7 @@ string installationId = service.GetOrCreateId();
 현재 프로젝트에서는 embedded package로 사용할 수 있습니다. 수동 게시 후 다른 프로젝트의 `Packages/manifest.json`에는 다음 Git UPM 주소를 사용합니다.
 
 ```json
-"com.actionfit.identity": "https://github.com/ActionFitGames/Identity.git#1.0.4"
+"com.actionfit.identity": "https://github.com/ActionFit-Editor/Identity.git#1.0.5"
 ```
 
 ## Agent Skills
