@@ -2,7 +2,7 @@ using System;
 
 namespace ActionFit.Identity
 {
-    public sealed class DelegateInstallationIdStore : IInstallationIdStore
+    public sealed class DelegateInstallationIdStore : InstallationIdStoreBase
     {
         private readonly Func<string> _load;
         private readonly Action<string> _save;
@@ -13,12 +13,12 @@ namespace ActionFit.Identity
             _save = save ?? throw new ArgumentNullException(nameof(save));
         }
 
-        public string LoadId() => _load();
+        public override string LoadId() => _load();
 
-        public void SaveId(string installationId) => _save(installationId);
+        public override void SaveId(string installationId) => _save(installationId);
     }
 
-    public sealed class DelegateInstallationIdMigrationSource : IInstallationIdMigrationSource
+    public sealed class DelegateInstallationIdMigrationSource : InstallationIdMigrationSourceBase
     {
         private readonly Func<string> _load;
 
@@ -31,13 +31,13 @@ namespace ActionFit.Identity
             _load = load ?? throw new ArgumentNullException(nameof(load));
         }
 
-        public string Name { get; }
+        public override string Name { get; }
 
-        public string LoadCandidate() => _load();
+        public override string LoadCandidate() => _load();
     }
 
-    public sealed class GuidInstallationIdGenerator : IInstallationIdGenerator
+    public sealed class GuidInstallationIdGenerator : InstallationIdGeneratorBase
     {
-        public string CreateId() => Guid.NewGuid().ToString();
+        public override string CreateId() => Guid.NewGuid().ToString();
     }
 }

@@ -143,29 +143,29 @@ namespace ActionFit.Identity.Tests
 
         private static InstallationIdentityService CreateService(
             MemoryStore store,
-            IEnumerable<IInstallationIdMigrationSource> sources,
+            IEnumerable<InstallationIdMigrationSourceBase> sources,
             string generatedId)
         {
             return new InstallationIdentityService(store, sources, new MemoryGenerator(generatedId));
         }
 
-        private sealed class MemoryStore : IInstallationIdStore
+        private sealed class MemoryStore : InstallationIdStoreBase
         {
             public MemoryStore(string value = "") => Value = value;
 
             public string Value { get; private set; }
             public int SaveCount { get; private set; }
 
-            public string LoadId() => Value;
+            public override string LoadId() => Value;
 
-            public void SaveId(string installationId)
+            public override void SaveId(string installationId)
             {
                 Value = installationId;
                 SaveCount++;
             }
         }
 
-        private sealed class MemorySource : IInstallationIdMigrationSource
+        private sealed class MemorySource : InstallationIdMigrationSourceBase
         {
             private readonly string _value;
 
@@ -175,17 +175,17 @@ namespace ActionFit.Identity.Tests
                 _value = value;
             }
 
-            public string Name { get; }
+            public override string Name { get; }
             public int LoadCount { get; private set; }
 
-            public string LoadCandidate()
+            public override string LoadCandidate()
             {
                 LoadCount++;
                 return _value;
             }
         }
 
-        private sealed class MemoryGenerator : IInstallationIdGenerator
+        private sealed class MemoryGenerator : InstallationIdGeneratorBase
         {
             private readonly string _value;
 
@@ -193,7 +193,7 @@ namespace ActionFit.Identity.Tests
 
             public int CreateCount { get; private set; }
 
-            public string CreateId()
+            public override string CreateId()
             {
                 CreateCount++;
                 return _value;

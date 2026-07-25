@@ -4,8 +4,8 @@
 
 ## 주요 기능
 
-- 프로젝트별 저장 방식을 연결하는 `IInstallationIdStore`
-- 기존 식별자를 순서대로 확인하는 `IInstallationIdMigrationSource`
+- 프로젝트별 저장 방식을 연결하는 `InstallationIdStoreBase`
+- 기존 식별자를 순서대로 확인하는 `InstallationIdMigrationSourceBase`
 - 저장된 ID 우선 보존 → 레거시 ID 마이그레이션 → 신규 GUID 생성 순서 보장
 - 저장 경로를 명시적으로 바꾸는 복구용 `ReplaceId`
 - 원본 ID 없이 생성 경로를 확인하는 `InstallationIdResolutionKind`
@@ -42,7 +42,7 @@ string installationId = service.GetOrCreateId();
 현재 프로젝트에서는 embedded package로 사용할 수 있습니다. 수동 게시 후 다른 프로젝트의 `Packages/manifest.json`에는 다음 Git UPM 주소를 사용합니다.
 
 ```json
-"com.actionfit.identity": "https://github.com/ActionFit-Editor/Identity.git#1.0.6"
+"com.actionfit.identity": "https://github.com/ActionFit-Editor/Identity.git#2.0.0"
 ```
 
 ## Agent Skill 안내

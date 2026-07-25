@@ -10,7 +10,7 @@ Keep the audit read-only and metadata-only. Never read PlayerPrefs, databases, c
 1. Read the repository instructions only, so project routing and safety rules apply before inspection.
 2. From the repository root, capture `git status --short --untracked-files=all` as the audit baseline. Preserve all pre-existing changes.
 3. Resolve the physical package root from `Packages/com.actionfit.identity`; otherwise use `Library/PackageCache/com.actionfit.identity@*` without editing it. Then read the package `README.md` and `AI_GUIDE.md`, plus the consuming project's identity architecture document when present.
-4. Use `rg` and read-only file inspection to trace `IInstallationIdStore`, `IInstallationIdMigrationSource`, `IInstallationIdGenerator`, `InstallationIdentityService`, resolution metadata, project adapters, direct identifier consumers, diagnostics, and tests. Inspect source definitions, never runtime values.
+4. Use `rg` and read-only file inspection to trace `InstallationIdStoreBase`, `InstallationIdMigrationSourceBase`, `InstallationIdGeneratorBase`, `InstallationIdentityService`, resolution metadata, project adapters, direct identifier consumers, diagnostics, and tests. Inspect source definitions, never runtime values.
 5. Verify and report evidence for these contracts:
    - Canonical storage wins before any migration source, and migration sources are evaluated in registration order.
    - Generation occurs only when canonical storage and every migration source have no usable value.

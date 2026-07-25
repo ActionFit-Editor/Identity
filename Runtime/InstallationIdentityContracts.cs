@@ -1,20 +1,20 @@
 namespace ActionFit.Identity
 {
-    public interface IInstallationIdStore
+    public abstract class InstallationIdStoreBase
     {
-        string LoadId();
-        void SaveId(string installationId);
+        public abstract string LoadId();
+        public abstract void SaveId(string installationId);
     }
 
-    public interface IInstallationIdMigrationSource
+    public abstract class InstallationIdMigrationSourceBase
     {
-        string Name { get; }
-        string LoadCandidate();
+        public abstract string Name { get; }
+        public abstract string LoadCandidate();
     }
 
-    public interface IInstallationIdGenerator
+    public abstract class InstallationIdGeneratorBase
     {
-        string CreateId();
+        public abstract string CreateId();
     }
 
     public enum InstallationIdResolutionKind

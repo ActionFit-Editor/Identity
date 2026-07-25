@@ -6,18 +6,18 @@ namespace ActionFit.Identity
     public sealed class InstallationIdentityService
     {
         private readonly object _gate = new object();
-        private readonly IInstallationIdStore _store;
-        private readonly List<IInstallationIdMigrationSource> _migrationSources;
-        private readonly IInstallationIdGenerator _generator;
+        private readonly InstallationIdStoreBase _store;
+        private readonly List<InstallationIdMigrationSourceBase> _migrationSources;
+        private readonly InstallationIdGeneratorBase _generator;
 
         public InstallationIdentityService(
-            IInstallationIdStore store,
-            IEnumerable<IInstallationIdMigrationSource> migrationSources = null,
-            IInstallationIdGenerator generator = null)
+            InstallationIdStoreBase store,
+            IEnumerable<InstallationIdMigrationSourceBase> migrationSources = null,
+            InstallationIdGeneratorBase generator = null)
         {
             _store = store ?? throw new ArgumentNullException(nameof(store));
             _generator = generator ?? new GuidInstallationIdGenerator();
-            _migrationSources = new List<IInstallationIdMigrationSource>();
+            _migrationSources = new List<InstallationIdMigrationSourceBase>();
 
             if (migrationSources == null) return;
 

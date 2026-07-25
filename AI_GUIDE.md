@@ -7,7 +7,7 @@ This file is shipped inside the UPM package so an AI assistant in a consuming Un
 - Package ID: `com.actionfit.identity`
 - Display name: ActionFit Identity
 - Repository: `https://github.com/ActionFit-Editor/Identity.git`
-- Current package version at generation time: `1.0.6`
+- Current package version at generation time: `2.0.0`
 - Unity version: `6000.2`
 
 ## Purpose
@@ -42,9 +42,9 @@ Read this file when:
 
 ## Runtime Architecture
 
-- `IInstallationIdStore` owns the canonical durable read/write boundary.
-- `IInstallationIdMigrationSource` exposes one read-only legacy candidate and a non-sensitive source name.
-- `IInstallationIdGenerator` creates an ID only after canonical storage and every migration source return no usable value.
+- `InstallationIdStoreBase` owns the canonical durable read/write boundary.
+- `InstallationIdMigrationSourceBase` exposes one read-only legacy candidate and a non-sensitive source name.
+- `InstallationIdGeneratorBase` creates an ID only after canonical storage and every migration source return no usable value.
 - `InstallationIdentityService.Resolve()` preserves canonical storage first, evaluates migration sources in registration order, persists the first usable candidate, and generates a GUID only as the final fallback.
 - `Resolve()` re-reads the canonical store on every call instead of caching a resolved value, so an explicit recovery replacement is visible to later consumers.
 - `InstallationIdentityService.ReplaceId()` is reserved for an explicit recovery or conflict-resolution decision. It rejects null, empty, and whitespace-only values.
@@ -56,7 +56,7 @@ The service deliberately propagates storage and migration-source exceptions. Gen
 
 - Keep project-specific persistence, SDK legacy keys, and migration ordering in a project adapter.
 - Preserve existing canonical IDs exactly. Do not normalize, hash, delete, or regenerate them during package adoption.
-- Keep legacy sources read-only. Persist the selected value only through `IInstallationIdStore`.
+- Keep legacy sources read-only. Persist the selected value only through `InstallationIdStoreBase`.
 - Configure one long-lived service instance per installation identity domain.
 - Do not use the installation ID as an authentication secret.
 - Never include raw installation IDs in logs, exceptions, analytics events, or package diagnostics.
